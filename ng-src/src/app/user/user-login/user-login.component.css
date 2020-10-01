@@ -1,0 +1,25 @@
+.login-container{
+    /*    position: absolute;*/
+        background-color: var(--white);
+        width: 90%;
+        margin: 10% auto;
+        overflow: auto;
+        border-radius: 0.25em;
+        box-shadow: 0 8px 7px 4px #e2e2e2;
+    }
+    #profile-img{
+        position: relative;
+        top: 50px;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: var(--secondary);
+    /*    z-index: 1;*/
+    }
+    #login-form{
+        padding-top: 50px;
+        margin: 0 1rem 50px;
+        border: solid 2px #ead3ff;
+        border-radius: 0.25rem;
+    }

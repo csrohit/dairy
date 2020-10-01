@@ -1,0 +1,19 @@
+.profile-container{
+    /*    position: absolute;*/
+        background-color: var(--white);
+        width: 90%;
+        margin: 10% auto;
+        overflow: auto;
+        border-radius: 0.25em;
+        box-shadow: 0 8px 7px 4px #e2e2e2;
+    }
+    #profile{
+        padding: 1rem;
+    }
+
+    #address-details > *{
+        display: block;
+    }
+    #address-details > * :not(:first-child){
+        margin-top: .25rem;
+    }

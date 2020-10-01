@@ -1,0 +1,15 @@
+export const DB_NAME = 'dairy';
+// export const DB_HOST = '';
+export const PORT = 3000;
+export const SECRET = 'secret';
+export const JwtSecret = 'mysecret';
+
+// mailing credentials
+export const SenderMailID = '';
+export const AuthPassword = '';
+export const AuthUserName = '';
+export const ProjectID = '';
+export const ClientID = '';
+export const ClientSecret = '';
+export const RefreshToken = '';
+

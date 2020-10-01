@@ -1,0 +1,41 @@
+<header>
+    <div id="hero-text">
+        <h1>Mazi Dairy</h1>
+        <p>Come, join us to be a part of digital India</p>
+        <div class="flex-container space-around">
+            <button class="btn btn-primary btn-sm" [routerLink]="['/user']">User</button><button class="btn btn-primary btn-sm"  [routerLink]="['/dairy']">Dairy</button>
+        </div>
+    </div>
+</header>
+<section>
+    <h2 class="full">Benefits you'll get</h2>
+    <div class="flex-row">
+        <div>
+            <h3>Farmers dairy revenue</h3>
+            <ol>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+            </ol>
+        </div>
+        <div class="chart-container" style="display: block">
+            <canvas mdbChart
+                [chartType]="chartType"
+                [datasets]="chartDatasets"
+                [labels]="chartLabels"
+                [colors]="chartColors"
+                [options]="chartOptions"
+                [legend]="true"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+            </canvas>
+          </div>
+    </div>
+</section>
+<section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem maxime at, molestiae eum voluptate tempore ex id dolor est ad iste sapiente, repellat esse repellendus libero quibusdam velit ratione ea, voluptatem dignissimos aperiam sequi illo. Ex fugit nesciunt ab fuga, aspernatur natus sed deserunt praesentium quae aperiam inventore, quidem. Reiciendis?</p><br><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem maxime at, molestiae eum voluptate tempore ex id dolor est ad iste sapiente, repellat esse repellendus libero quibusdam velit ratione ea, voluptatem dignissimos aperiam sequi illo. Ex fugit nesciunt ab fuga, aspernatur natus sed deserunt praesentium quae aperiam inventore, quidem. Reiciendis?</p><br><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem maxime at, molestiae eum voluptate tempore ex id dolor est ad iste sapiente, repellat esse repellendus libero quibusdam velit ratione ea, voluptatem dignissimos aperiam sequi illo. Ex fugit nesciunt ab fuga, aspernatur natus sed deserunt praesentium quae aperiam inventore, quidem. Reiciendis?</p><br><br>
+</section>
