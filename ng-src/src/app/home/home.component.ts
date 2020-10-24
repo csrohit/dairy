@@ -19,11 +19,7 @@ export class HomeComponent implements OnInit {
 
   public chartColors: Array<any> = [
     {
-<<<<<<< HEAD
       backgroundColor: 'rgba(105, 0, 132, .2)',
-=======
-      backgroundColor: 'rgba(105, 0, 132, .2)', 
->>>>>>> ui
       borderColor: 'rgba(200, 99, 132, .7)',
       borderWidth: 2,
     },
