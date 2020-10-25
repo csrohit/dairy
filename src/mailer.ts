@@ -1,29 +1,33 @@
-import nodeMailer, { createTransport } from 'nodemailer';
+import nodeMailer, { createTransport, TransportOptions } from 'nodemailer';
 import { google } from 'googleapis';
-
+import { ClientID, ClientSecret, RefreshToken, SenderMailID } from './config';
 const OAuth2 = google.auth.OAuth2;
 
-import { ClientID, ClientSecret, RefreshToken } from './config';
-const oAuth2 = google.auth.OAuth2;
+const oAuth2Client = new OAuth2(ClientID, ClientSecret, 'https://developers.google.com/oauthplayground');
 
-const oAuth2Client = new oAuth2(ClientID, ClientSecret, 'https://developers.google.com/oauthplayground');
 oAuth2Client.setCredentials({
 	refresh_token: RefreshToken
 });
 
 const accessToken = oAuth2Client.getAccessToken();
 
-const smtpTransport = createTransport({
-	service: 'gmail',
+const nodemailerSettings = {
+	host: 'smtp.gmail.com',
+	port: 465,
+	secure: true,
+	service: 'Gmail',
 	auth: {
 		type: 'OAuth2',
-		user: 'theelectronicsnerd@gmail.com',
+		user: SenderMailID,
 		clientId: ClientID,
 		clientSecret: ClientSecret,
 		refreshToken: RefreshToken,
 		accessToken
 	}
-});
+} as TransportOptions;
+
+export const gmailTransport = createTransport(nodemailerSettings);
+
 
 // const mailOptions = {
 // 	from: 'theelectronicsnerde@gmail.com',
@@ -33,9 +37,9 @@ const smtpTransport = createTransport({
 // 	html: '<b>test</b>'
 // };
 
-// smtpTransport.sendMail(mailOptions, (error, response) => {
+// gmailTransport.sendMail(mailOptions, (error, response) => {
 // 	error ? console.log(error) : console.log(response);
-// 	smtpTransport.close();
+// 	gmailTransport.close();
 // });
 
 export interface MailOptions{
@@ -60,4 +64,4 @@ interface SentMessageInfo{
 }
 
 
-export const sendMail = (mailOptions: MailOptions, callback: (err: Error | null, info: SentMessageInfo) => void) => smtpTransport.sendMail(mailOptions, callback);
+export const sendMail = (mailOptions: MailOptions, callback: (err: Error | null, info: SentMessageInfo) => void) => gmailTransport.sendMail(mailOptions, callback);
